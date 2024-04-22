@@ -1,13 +1,15 @@
 cmake_minimum_required(VERSION 3.16)
-set(PROJECT_NAME hello_world)
 
-project(${PROJECT_NAME} CXX C)
 # SET HERE THE PATH TO YOUR C99 AND C++ COMPILERS
-#set(CMAKE_C_COMPILER /tool/gcc_linaro/gcc-arm-none-eabi-7.3.1/bin/arm-none-eabi-gcc)
-#set(CMAKE_CXX_COMPILER /tool/gcc_linaro/gcc-arm-none-eabi-7.3.1/bin/arm-none-eabi-g++)
+set(CMAKE_C_COMPILER /home/ubuntu/workspace/gcc-9.2-arm32-eabi/bin/arm-none-eabi-gcc)
+set(CMAKE_CXX_COMPILER /home/ubuntu/workspace/gcc-9.2-arm32-eabi/bin/arm-none-eabi-g++)
 
 set(CMAKE_C_COMPILER_WORKS 1 CACHE INTERNAL "")
 set(CMAKE_CXX_COMPILER_WORKS 1 CACHE INTERNAL "")
+
+set(PROJECT_NAME hello_world)
+
+project(${PROJECT_NAME} CXX C)
 
 set(SOURCE_FILES
     example/hello.c

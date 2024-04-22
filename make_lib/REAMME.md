@@ -15,3 +15,11 @@ make
 ```bash
 make install
 ```
+
+# if not find arm gcc
+install gcc lib
+```bash
+sudo apt-get install lib32ncurses5
+
+sudo apt-get install lib32z1
+```
