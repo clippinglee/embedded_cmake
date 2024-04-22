@@ -1,30 +1,29 @@
 cmake_minimum_required(VERSION 3.16)
-set(PROJECT_NAME add)
 
-project(${PROJECT_NAME} CXX C)
+
 # SET HERE THE PATH TO YOUR C99 AND C++ COMPILERS
-set(CMAKE_C_COMPILER /tool/gcc_linaro/gcc-arm-none-eabi-7.3.1/bin/arm-none-eabi-gcc)
-set(CMAKE_CXX_COMPILER /tool/gcc_linaro/gcc-arm-none-eabi-7.3.1/bin/arm-none-eabi-g++)
-set(CMAKE_LINKER "arm-none-eabi-ld") # set linkfile path
+set(CMAKE_C_COMPILER /home/ubuntu/workspace/gcc-9.2-arm32-eabi/bin/arm-none-eabi-gcc)
+set(CMAKE_CXX_COMPILER /home/ubuntu/workspace/gcc-9.2-arm32-eabi/bin/arm-none-eabi-g++)
+set(CMAKE_LINKER /home/ubuntu/workspace/gcc-9.2-arm32-eabi/bin/arm-none-eabi-ld) # set linkfile path
 
-set(CMAKE_C_COMPILER_WORKS 1 CACHE INTERNAL "")
+set(CMAKE_C_COMPILER_WORKS TRUE)
 set(CMAKE_CXX_COMPILER_WORKS 1 CACHE INTERNAL "")
 
+project(${PROJECT_NAME} CXX C)
+set(PROJECT_NAME hello_world)
+
 set(SOURCE_FILES
-    CtIpcIcc.cpp
-    IccIrq.cpp
-    IccHelper.cpp
+    example/hello.c
 )
 
-#detal: library type STATIC|SHARED|MODULE
-add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES})
 
 # SET HERE YOUR BUILDING FLAGS
 set(FLAGS "-O2 -ffunction-sections -mno-unaligned-access \
     -g -finline -Wall -Wsign-compare -Wno-multichar \
     -Wno-unused-parameter -Wno-unused-function -Wno-unused-label -Wno-tautological-compare \
     -fno-short-enums -fno-common -fdata-sections -fno-exceptions \
-    -mcpu=cortex-r5 -mfpu=vfpv3-d16 -mfloat-abi=hard \
+    -mcpu=cortex-m7 -mfpu=vfpv5-sp-d16 -mfloat-abi=softfp -specs=nosys.specs  \
+    --sysroot=/home/ubuntu/workspace/gcc-9.2-arm32-eabi/arm-none-eabi/newlib \
     -nostdlib" CACHE STRING "" FORCE)
 
 set(CMAKE_C_FLAGS_INIT "-std=c11 ${FLAGS} -Wstrict-prototypes -Wwrite-strings \
@@ -37,25 +36,23 @@ set(CMAKE_CXX_FLAGS_INIT "-std=c++11 ${FLAGS} -fno-exceptions -fno-rtti -fno-thr
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin/lib)
 
 # add include header path
-include_directories(${PROJECT_SOURCE_DIR}/src/include)
-#include directories path
-target_include_directories(
-    ${PROJECT_NAME}
-PUBLIC 
-    INTERFACE
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src/include>
-    $<INSTALL_INTERFACE:include>
+include_directories(${PROJECT_SOURCE_DIR}/example/include)
+
+
+
+set(CMAKE_SYSROOT /home/ubuntu/workspace/gcc-9.2-arm32-eabi/arm-none-eabi/newlib)
+
+
+
+set(OUT_FILE_BASENAME ${PROJECT_NAME}.elf)
+add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+
+set_target_properties(${PROJECT_NAME} PROPERTIES "-Texample/example.ld" SUFFIX ${OUT_FILE_EXT})
+#add anther libraries
+target_link_libraries(${PROJECT_NAME}
 PRIVATE
-
+   /home/ubuntu/workspace/gcc-9.2-arm32-eabi/arm-none-eabi/newlib/lib/libc.a   
 )
-
-#add ather libraries
-target_link_libraries(${PROJECT_NAME} 
-PUBLIC 
-    time_sync
-
-    
-    )
 
 # set compile opation
 target_compile_definitions(${PROJECT_NAME}
@@ -63,9 +60,15 @@ target_compile_definitions(${PROJECT_NAME}
 
     )
 
-set(OUT_FILE_BASENAME ${SOURCE_FILES}.elf)
-add_executable(${OUT_FILE_BASENAME} ${SOURCE_FILES})
-set_target_properties(${OUT_FILE_BASENAME} PROPERTIES LINKER_LANGUAGE C SUFFIX ${OUT_FILE_EXT})
+link_directories(/home/ubuntu/workspace/gcc-9.2-arm32-eabi/arm-none-eabi/newlib/lib/crt0.o/directory)
+#include directories path
+target_include_directories(
+    ${PROJECT_NAME}
+PUBLIC 
+    ${PROJECT_SOURCE_DIR}/example/include
+    /home/ubuntu/workspace/gcc-9.2-arm32-eabi/arm-none-eabi/include
+PRIVATE
 
+)
 
 
