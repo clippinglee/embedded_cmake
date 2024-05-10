@@ -1,0 +1,637 @@
+.
+├── board
+│   ├── Siul2_Port_Ip_Cfg.c
+│   └── Siul2_Port_Ip_Cfg.h
+├── CMakeLists.txt
+├── generate
+│   ├── include
+│   │   ├── Clock_Ip_BOARD_InitPeripherals_PBcfg.h
+│   │   ├── Clock_Ip_Cfg_Defines.h
+│   │   ├── Clock_Ip_Cfg.h
+│   │   ├── modules.h
+│   │   ├── OsIf_ArchCfg.h
+│   │   ├── OsIf_Cfg.h
+│   │   └── Siul2_Port_Ip_Defines.h
+│   └── src
+│       ├── Clock_Ip_BOARD_InitPeripherals_PBcfg.c
+│       ├── Clock_Ip_Cfg.c
+│       └── OsIf_Cfg.c
+├── include.bak
+│   ├── ARMCM7_DP.h
+│   ├── ARMCM7.h
+│   ├── ARMCM7_SP.h
+│   ├── cmsis_compiler.h
+│   ├── cmsis_gcc.h
+│   ├── cmsis_version.h
+│   ├── core_cm7.h
+│   ├── mpu_armv7.h
+│   ├── S32G274A.h
+│   ├── start_cores.h
+│   ├── system_ARMCM7.h
+│   └── typedefs.h
+├── Linker_Files.bak
+│   └── S32G_M7_RAM.ld
+├── Mcal
+│   ├── Base_TS_T40D11M30I2R0
+│   │   ├── anchors.xml
+│   │   ├── ant_generator.xml
+│   │   ├── autosar
+│   │   │   └── Base.epd
+│   │   ├── config
+│   │   │   └── Base.xdm
+│   │   ├── doc
+│   │   │   ├── RTD_BASE_IM.pdf
+│   │   │   └── RTD_BASE_UM.pdf
+│   │   ├── generate_PC
+│   │   │   ├── include
+│   │   │   │   ├── modules.h
+│   │   │   │   ├── OsIf_ArchCfg.h
+│   │   │   │   └── OsIf_Cfg.h
+│   │   │   └── src
+│   │   │       └── OsIf_Cfg.c
+│   │   ├── generate_swcd
+│   │   │   └── swcd
+│   │   │       └── Base_Bswmd.arxml
+│   │   ├── header
+│   │   │   ├── S32G274A_A53_GPR.h
+│   │   │   ├── S32G274A_ADC.h
+│   │   │   ├── S32G274A_ATP.h
+│   │   │   ├── S32G274A_BOOT.h
+│   │   │   ├── S32G274A_CAIU.h
+│   │   │   ├── S32G274A_CCTI_FAULT_CTRL.h
+│   │   │   ├── S32G274A_CM7_GPR.h
+│   │   │   ├── S32G274A_CMIU.h
+│   │   │   ├── S32G274A_CMU_FC.h
+│   │   │   ├── S32G274A_CMU_FM.h
+│   │   │   ├── S32G274A_COMMON.h
+│   │   │   ├── S32G274A_CRC.h
+│   │   │   ├── S32G274A_CSR.h
+│   │   │   ├── S32G274A_CTU.h
+│   │   │   ├── S32G274A_DDR_GPR.h
+│   │   │   ├── S32G274A_DDR_SUBSYSTEM.h
+│   │   │   ├── S32G274A_DFS.h
+│   │   │   ├── S32G274A_DIRU.h
+│   │   │   ├── S32G274A_DMA_CRC.h
+│   │   │   ├── S32G274A_DMA.h
+│   │   │   ├── S32G274A_DMAMUX.h
+│   │   │   ├── S32G274A_DMA_TCD.h
+│   │   │   ├── S32G274A_EIM.h
+│   │   │   ├── S32G274A_ERM.h
+│   │   │   ├── S32G274A_FCCU.h
+│   │   │   ├── S32G274A_FLEXCAN.h
+│   │   │   ├── S32G274A_FLEXRAY.h
+│   │   │   ├── S32G274A_FSC.h
+│   │   │   ├── S32G274A_FTM.h
+│   │   │   ├── S32G274A_FXOSC.h
+│   │   │   ├── S32G274A_GMAC.h
+│   │   │   ├── S32G274A.h
+│   │   │   ├── S32G274A_I2C.h
+│   │   │   ├── S32G274A_JDC.h
+│   │   │   ├── S32G274A_LINFLEXD.h
+│   │   │   ├── S32G274A_LLCE_CORE_TO_CORE.h
+│   │   │   ├── S32G274A_LLCE_SYSCTRL.h
+│   │   │   ├── S32G274A_MC_CGM_1.h
+│   │   │   ├── S32G274A_MC_CGM_2.h
+│   │   │   ├── S32G274A_MC_CGM.h
+│   │   │   ├── S32G274A_MC_ME.h
+│   │   │   ├── S32G274A_MCM.h
+│   │   │   ├── S32G274A_MC_RGM.h
+│   │   │   ├── S32G274A_MDM_AP.h
+│   │   │   ├── S32G274A_MPU.h
+│   │   │   ├── S32G274A_MSCM.h
+│   │   │   ├── S32G274A_MU.h
+│   │   │   ├── S32G274A_NCBUID_RESET_VALUE.h
+│   │   │   ├── S32G274A_NVIC.h
+│   │   │   ├── S32G274A_OCOTP_GPR.h
+│   │   │   ├── S32G274A_OCOTP.h
+│   │   │   ├── S32G274A_PCIE_DMA.h
+│   │   │   ├── S32G274A_PCIE_EP.h
+│   │   │   ├── S32G274A_PCIE_RC.h
+│   │   │   ├── S32G274A_PERF_REGISTERS.h
+│   │   │   ├── S32G274A_PIT.h
+│   │   │   ├── S32G274A_PLLDIG.h
+│   │   │   ├── S32G274A_PMC.h
+│   │   │   ├── S32G274A_PMUEVENTOBSERVER.h
+│   │   │   ├── S32G274A_QUADSPI_ARDB.h
+│   │   │   ├── S32G274A_QUADSPI.h
+│   │   │   ├── S32G274A_REG_PROT.h
+│   │   │   ├── S32G274A_RESET.h
+│   │   │   ├── S32G274A_RTC.h
+│   │   │   ├── S32G274A_S32G_GPR.h
+│   │   │   ├── S32G274A_S32G_STDBY_GPR.h
+│   │   │   ├── S32G274A_SBSW.h
+│   │   │   ├── S32G274A_SCB.h
+│   │   │   ├── S32G274A_SECURITY.h
+│   │   │   ├── S32G274A_SELFTEST_GPR.h
+│   │   │   ├── S32G274A_SELFTEST_GPR_TOP.h
+│   │   │   ├── S32G274A_SEMA42.h
+│   │   │   ├── S32G274A_SERDES_DMA_PCIE_1.h
+│   │   │   ├── S32G274A_SERDES_EP_PCIE_1.h
+│   │   │   ├── S32G274A_SERDES_GPR.h
+│   │   │   ├── S32G274A_SERDES_RC_PCIE_1.h
+│   │   │   ├── S32G274A_SERDES_SS.h
+│   │   │   ├── S32G274A_SERDES_SS_PCIE_1.h
+│   │   │   ├── S32G274A_SIUL2.h
+│   │   │   ├── S32G274A_SPI.h
+│   │   │   ├── S32G274A_SRAMC.h
+│   │   │   ├── S32G274A_SRC.h
+│   │   │   ├── S32G274A_STCU2.h
+│   │   │   ├── S32G274A_STM.h
+│   │   │   ├── S32G274A.svd
+│   │   │   ├── S32G274A_SWT.h
+│   │   │   ├── S32G274A_SYSTICK.h
+│   │   │   ├── S32G274A_TMU.h
+│   │   │   ├── S32G274A_UMCTL2_MP.h
+│   │   │   ├── S32G274A_UMCTL2_REGS.h
+│   │   │   ├── S32G274A_UOTG.h
+│   │   │   ├── S32G274A_UOTGNC.h
+│   │   │   ├── S32G274A_USDHC.h
+│   │   │   ├── S32G274A_WKPU.h
+│   │   │   ├── S32G274A_XRDC_0.h
+│   │   │   ├── S32G274A_XRDC.h
+│   │   │   ├── S32G399A_A53_GPR.h
+│   │   │   ├── S32G399A_A53.svd
+│   │   │   ├── S32G399A_ADC.h
+│   │   │   ├── S32G399A_ATP.h
+│   │   │   ├── S32G399A_BOOT.h
+│   │   │   ├── S32G399A_CAIU0_QOSGENERATOR.h
+│   │   │   ├── S32G399A_CAIU1_QOSGENERATOR.h
+│   │   │   ├── S32G399A_CAIU.h
+│   │   │   ├── S32G399A_CCTI_FAULT_CTRL.h
+│   │   │   ├── S32G399A_CM7_GPR.h
+│   │   │   ├── S32G399A_CMIU.h
+│   │   │   ├── S32G399A_CMU_FC_39.h
+│   │   │   ├── S32G399A_CMU_FC_46.h
+│   │   │   ├── S32G399A_CMU_FC_47.h
+│   │   │   ├── S32G399A_CMU_FC_48.h
+│   │   │   ├── S32G399A_CMU_FC_49.h
+│   │   │   ├── S32G399A_CMU_FC_50.h
+│   │   │   ├── S32G399A_CMU_FC_51.h
+│   │   │   ├── S32G399A_CMU_FC.h
+│   │   │   ├── S32G399A_CMU_FM.h
+│   │   │   ├── S32G399A_COMMON.h
+│   │   │   ├── S32G399A_CRC.h
+│   │   │   ├── S32G399A_CSR.h
+│   │   │   ├── S32G399A_CTU.h
+│   │   │   ├── S32G399A_DDR_GPR.h
+│   │   │   ├── S32G399A_DDR_SUBSYSTEM.h
+│   │   │   ├── S32G399A_DFS.h
+│   │   │   ├── S32G399A_DIRU_0.h
+│   │   │   ├── S32G399A_DIRU_1.h
+│   │   │   ├── S32G399A_DMA_CRC.h
+│   │   │   ├── S32G399A_DMA.h
+│   │   │   ├── S32G399A_DMAMUX.h
+│   │   │   ├── S32G399A_DMA_TCD.h
+│   │   │   ├── S32G399A_EIM.h
+│   │   │   ├── S32G399A_ERM.h
+│   │   │   ├── S32G399A_FCCU.h
+│   │   │   ├── S32G399A_FLEXCAN.h
+│   │   │   ├── S32G399A_FLEXRAY.h
+│   │   │   ├── S32G399A_FSC.h
+│   │   │   ├── S32G399A_FTM.h
+│   │   │   ├── S32G399A_FXOSC.h
+│   │   │   ├── S32G399A_GMAC.h
+│   │   │   ├── S32G399A.h
+│   │   │   ├── S32G399A_I2C.h
+│   │   │   ├── S32G399A_JDC.h
+│   │   │   ├── S32G399A_LINFLEXD.h
+│   │   │   ├── S32G399A_LLCE_CORE_TO_CORE.h
+│   │   │   ├── S32G399A_LLCE_SYSCTRL.h
+│   │   │   ├── S32G399A_M7.svd
+│   │   │   ├── S32G399A_MC_CGM_1.h
+│   │   │   ├── S32G399A_MC_CGM_2.h
+│   │   │   ├── S32G399A_MC_CGM_5.h
+│   │   │   ├── S32G399A_MC_CGM_6.h
+│   │   │   ├── S32G399A_MC_CGM.h
+│   │   │   ├── S32G399A_MC_ME.h
+│   │   │   ├── S32G399A_MCM.h
+│   │   │   ├── S32G399A_MC_RGM.h
+│   │   │   ├── S32G399A_MDM_AP.h
+│   │   │   ├── S32G399A_MPU.h
+│   │   │   ├── S32G399A_MSCM.h
+│   │   │   ├── S32G399A_MU.h
+│   │   │   ├── S32G399A_NCBUID_RESET_VALUE.h
+│   │   │   ├── S32G399A_NVIC.h
+│   │   │   ├── S32G399A_OCOTP_GPR.h
+│   │   │   ├── S32G399A_OCOTP.h
+│   │   │   ├── S32G399A_PCIE_DMA.h
+│   │   │   ├── S32G399A_PCIE_EP.h
+│   │   │   ├── S32G399A_PCIE_RC.h
+│   │   │   ├── S32G399A_PERF_REGISTERS.h
+│   │   │   ├── S32G399A_PIT.h
+│   │   │   ├── S32G399A_PLLDIG.h
+│   │   │   ├── S32G399A_PMC.h
+│   │   │   ├── S32G399A_PMUEVENTOBSERVER.h
+│   │   │   ├── S32G399A_QUADSPI_ARDB.h
+│   │   │   ├── S32G399A_QUADSPI.h
+│   │   │   ├── S32G399A_RESET.h
+│   │   │   ├── S32G399A_RTC.h
+│   │   │   ├── S32G399A_S32G_GPR.h
+│   │   │   ├── S32G399A_S32G_STDBY_GPR.h
+│   │   │   ├── S32G399A_SBSW.h
+│   │   │   ├── S32G399A_SCB.h
+│   │   │   ├── S32G399A_SECURITY.h
+│   │   │   ├── S32G399A_SELFTEST_GPR.h
+│   │   │   ├── S32G399A_SELFTEST_GPR_TOP.h
+│   │   │   ├── S32G399A_SEMA42.h
+│   │   │   ├── S32G399A_SERDES_DMA_PCIE_1.h
+│   │   │   ├── S32G399A_SERDES_EP_PCIE_1.h
+│   │   │   ├── S32G399A_SERDES_GPR.h
+│   │   │   ├── S32G399A_SERDES_RC_PCIE_1.h
+│   │   │   ├── S32G399A_SERDES_SS.h
+│   │   │   ├── S32G399A_SERDES_SS_PCIE_1.h
+│   │   │   ├── S32G399A_SIUL2.h
+│   │   │   ├── S32G399A_SPI.h
+│   │   │   ├── S32G399A_SRAMC.h
+│   │   │   ├── S32G399A_SRC_GPR.h
+│   │   │   ├── S32G399A_SRC.h
+│   │   │   ├── S32G399A_STCU2.h
+│   │   │   ├── S32G399A_STM.h
+│   │   │   ├── S32G399A_SWT.h
+│   │   │   ├── S32G399A_SYSTICK.h
+│   │   │   ├── S32G399A_TMU.h
+│   │   │   ├── S32G399A_UMCTL2_MP.h
+│   │   │   ├── S32G399A_UMCTL2_REGS.h
+│   │   │   ├── S32G399A_UOTG.h
+│   │   │   ├── S32G399A_UOTGNC.h
+│   │   │   ├── S32G399A_USDHC.h
+│   │   │   ├── S32G399A_WKPU.h
+│   │   │   ├── S32G399A_XRDC_0.h
+│   │   │   ├── S32G399A_XRDC.h
+│   │   │   ├── S32R45_A53_COMMON.h
+│   │   │   ├── S32R45_A53_GPR.h
+│   │   │   ├── S32R45_ADC.h
+│   │   │   ├── S32R45_ATP.h
+│   │   │   ├── S32R45_BOOT.h
+│   │   │   ├── S32R45_CAIU.h
+│   │   │   ├── S32R45_CCTI_FAULT_CTRL.h
+│   │   │   ├── S32R45_CM7_GPR.h
+│   │   │   ├── S32R45_CMIU.h
+│   │   │   ├── S32R45_CMU_FC.h
+│   │   │   ├── S32R45_CMU_FM.h
+│   │   │   ├── S32R45_COMMON.h
+│   │   │   ├── S32R45_CRC.h
+│   │   │   ├── S32R45_CSR.h
+│   │   │   ├── S32R45_CTE.h
+│   │   │   ├── S32R45_CTU.h
+│   │   │   ├── S32R45_DDR_GPR.h
+│   │   │   ├── S32R45_DDR_SUBSYSTEM.h
+│   │   │   ├── S32R45_DFS.h
+│   │   │   ├── S32R45_DIRU.h
+│   │   │   ├── S32R45_DMA_CRC.h
+│   │   │   ├── S32R45_DMA.h
+│   │   │   ├── S32R45_DMAMUX.h
+│   │   │   ├── S32R45_DMA_TCD.h
+│   │   │   ├── S32R45_EIM.h
+│   │   │   ├── S32R45_ERM.h
+│   │   │   ├── S32R45_FASTDMA.h
+│   │   │   ├── S32R45_FCCU.h
+│   │   │   ├── S32R45_FLEXCAN.h
+│   │   │   ├── S32R45_FLEXRAY.h
+│   │   │   ├── S32R45_FSC.h
+│   │   │   ├── S32R45_FTM.h
+│   │   │   ├── S32R45_FXOSC.h
+│   │   │   ├── S32R45_GMAC.h
+│   │   │   ├── S32R45.h
+│   │   │   ├── S32R45_I2C.h
+│   │   │   ├── S32R45_JDC.h
+│   │   │   ├── S32R45_LINFLEXD.h
+│   │   │   ├── S32R45_M7_COMMON.h
+│   │   │   ├── S32R45_MC_CGM_1.h
+│   │   │   ├── S32R45_MC_CGM_2.h
+│   │   │   ├── S32R45_MC_CGM.h
+│   │   │   ├── S32R45_MC_ME.h
+│   │   │   ├── S32R45_MCM.h
+│   │   │   ├── S32R45_MC_RGM.h
+│   │   │   ├── S32R45_MDM_AP.h
+│   │   │   ├── S32R45_MIPICSI2.h
+│   │   │   ├── S32R45_MPU.h
+│   │   │   ├── S32R45_MSCM.h
+│   │   │   ├── S32R45_MU.h
+│   │   │   ├── S32R45_NCBUID_RESET_VALUE.h
+│   │   │   ├── S32R45_NVIC.h
+│   │   │   ├── S32R45_OCOTP.h
+│   │   │   ├── S32R45_PCIE_DMA.h
+│   │   │   ├── S32R45_PCIE_EP.h
+│   │   │   ├── S32R45_PCIE_RC.h
+│   │   │   ├── S32R45_PERF_REGISTERS.h
+│   │   │   ├── S32R45_PIT.h
+│   │   │   ├── S32R45_PLLDIG.h
+│   │   │   ├── S32R45_PMC.h
+│   │   │   ├── S32R45_PMUEVENTOBSERVER.h
+│   │   │   ├── S32R45_QUADSPI_ARDB.h
+│   │   │   ├── S32R45_QUADSPI.h
+│   │   │   ├── S32R45_RESET.h
+│   │   │   ├── S32R45_SBSW.h
+│   │   │   ├── S32R45_SCB.h
+│   │   │   ├── S32R45_SECURITY.h
+│   │   │   ├── S32R45_SELFTEST_GPR.h
+│   │   │   ├── S32R45_SELFTEST_GPR_TOP.h
+│   │   │   ├── S32R45_SEMA42.h
+│   │   │   ├── S32R45_SERDES_DMA_PCIE_1.h
+│   │   │   ├── S32R45_SERDES_EP_PCIE_1.h
+│   │   │   ├── S32R45_SERDES_GPR.h
+│   │   │   ├── S32R45_SERDES_RC_PCIE_1.h
+│   │   │   ├── S32R45_SERDES_SS.h
+│   │   │   ├── S32R45_SERDES_SS_PCIE_1.h
+│   │   │   ├── S32R45_SIUL2.h
+│   │   │   ├── S32R45_SPI.h
+│   │   │   ├── S32R45_SPT.h
+│   │   │   ├── S32R45_SRAMC.h
+│   │   │   ├── S32R45_SRC_1.h
+│   │   │   ├── S32R45_SRC_GPR.h
+│   │   │   ├── S32R45_SRC.h
+│   │   │   ├── S32R45_STCU2.h
+│   │   │   ├── S32R45_STM.h
+│   │   │   ├── S32R45.svd
+│   │   │   ├── S32R45_SWT.h
+│   │   │   ├── S32R45_SYSTICK.h
+│   │   │   ├── S32R45_TMU.h
+│   │   │   ├── S32R45_UMCTL2_MP.h
+│   │   │   ├── S32R45_UMCTL2_REGS.h
+│   │   │   ├── S32R45_USDHC.h
+│   │   │   ├── S32R45_VSPA.h
+│   │   │   ├── S32R45_WKPU.h
+│   │   │   ├── S32R45_XRDC_0.h
+│   │   │   └── S32R45_XRDC.h
+│   │   ├── include
+│   │   │   ├── Adc_MemMap.h
+│   │   │   ├── Base_MemMap.h
+│   │   │   ├── BasicTypes.h
+│   │   │   ├── Can_43_FLEXCAN_MemMap.h
+│   │   │   ├── Can_43_LLCE_MemMap.h
+│   │   │   ├── Can_GeneralTypes.h
+│   │   │   ├── Can_MemMap.h
+│   │   │   ├── Compiler_Cfg.h
+│   │   │   ├── CompilerDefinition.h
+│   │   │   ├── Compiler.h
+│   │   │   ├── ComStack_Cfg.h
+│   │   │   ├── ComStack_Types.h
+│   │   │   ├── ComStackTypes.h
+│   │   │   ├── Crc_MemMap.h
+│   │   │   ├── Crypto_MemMap.h
+│   │   │   ├── Csec_MemMap.h
+│   │   │   ├── Dem_MemMap.h
+│   │   │   ├── Det_MemMap.h
+│   │   │   ├── Devassert.h
+│   │   │   ├── Dio_MemMap.h
+│   │   │   ├── Ecum_MemMap.h
+│   │   │   ├── Eep_MemMap.h
+│   │   │   ├── Eth_43_PFE_MemMap.h
+│   │   │   ├── Eth_GeneralTypes.h
+│   │   │   ├── Eth_MemMap.h
+│   │   │   ├── EthSwitch_43_SJA1105P_MemMap.h
+│   │   │   ├── EthSwt_43_SJA11XX_MemMap.h
+│   │   │   ├── EthTrcv_43_PHY_MemMap.h
+│   │   │   ├── EthTrcv_43_TJA110X_MemMap.h
+│   │   │   ├── Fee_MemMap.h
+│   │   │   ├── Fls_MemMap.h
+│   │   │   ├── Fr_43_LLCE_MemMap.h
+│   │   │   ├── Fr_GeneralTypes.h
+│   │   │   ├── Fr_MemMap.h
+│   │   │   ├── Gpt_MemMap.h
+│   │   │   ├── I2c_MemMap.h
+│   │   │   ├── Icu_MemMap.h
+│   │   │   ├── IpVersionMacros.h
+│   │   │   ├── Lin_43_LLCE_MemMap.h
+│   │   │   ├── Lin_GeneralTypes.h
+│   │   │   ├── Lin_MemMap.h
+│   │   │   ├── Mcal.h
+│   │   │   ├── Mcem_MemMap.h
+│   │   │   ├── Mcl_MemMap.h
+│   │   │   ├── Mcu_MemMap.h
+│   │   │   ├── Ocotp_MemMap.h
+│   │   │   ├── Ocu_MemMap.h
+│   │   │   ├── OsIf_Cfg_TypesDef.h
+│   │   │   ├── OsIf_DeviceRegisters.h
+│   │   │   ├── OsIf.h
+│   │   │   ├── OsIf_Internal.h
+│   │   │   ├── OsIf_Interrupts.h
+│   │   │   ├── OsIf_Timer_Custom.h
+│   │   │   ├── OsIf_Timer_System.h
+│   │   │   ├── OsIf_Timer_System_Internal_Systick.h
+│   │   │   ├── Pcie_MemMap.h
+│   │   │   ├── Platform_MemMap.h
+│   │   │   ├── Platform_Types.h
+│   │   │   ├── PlatformTypes.h
+│   │   │   ├── Pmic_MemMap.h
+│   │   │   ├── Port_MemMap.h
+│   │   │   ├── Pwm_MemMap.h
+│   │   │   ├── Qdec_MemMap.h
+│   │   │   ├── Reg_eSys.h
+│   │   │   ├── RegLockMacros.h
+│   │   │   ├── Rm_MemMap.h
+│   │   │   ├── Rte_MemMap.h
+│   │   │   ├── Sent_MemMap.h
+│   │   │   ├── Serdes_MemMap.h
+│   │   │   ├── Soc_Ips.h
+│   │   │   ├── Spi_MemMap.h
+│   │   │   ├── StandardTypes.h
+│   │   │   ├── Std_Types.h
+│   │   │   ├── Thermal_MemMap.h
+│   │   │   ├── Tm_MemMap.h
+│   │   │   ├── Uart_MemMap.h
+│   │   │   ├── Wdg_43_VR5510_MemMap.h
+│   │   │   └── Wdg_MemMap.h
+│   │   ├── META-INF
+│   │   │   ├── CRYPTOMANIFEST.MF
+│   │   │   ├── CRYPTOMANIFESTSIG.MF
+│   │   │   └── MANIFEST.MF
+│   │   ├── plugin.xml
+│   │   ├── src
+│   │   │   ├── OsIf_Interrupts.c
+│   │   │   ├── OsIf_Timer.c
+│   │   │   ├── OsIf_Timer_System.c
+│   │   │   └── OsIf_Timer_System_Internal_Systick.c
+│   │   └── wizard_data
+│   │       ├── Clock_Ip_Cfg.c
+│   │       ├── Clock_Ip_Cfg.h
+│   │       ├── main.c
+│   │       ├── modules.h
+│   │       ├── OsIf_ArchCfg.h
+│   │       ├── OsIf_Cfg.c
+│   │       ├── OsIf_Cfg.h
+│   │       ├── S32G2XX
+│   │       │   ├── Clock_Ip_BOARD_InitPeripherals_PBcfg.c
+│   │       │   ├── Clock_Ip_BOARD_InitPeripherals_PBcfg.h
+│   │       │   └── Clock_Ip_Cfg_Defines.h
+│   │       ├── S32G3XX
+│   │       │   ├── Clock_Ip_BOARD_InitPeripherals_PBcfg.c
+│   │       │   ├── Clock_Ip_BOARD_InitPeripherals_PBcfg.h
+│   │       │   └── Clock_Ip_Cfg_Defines.h
+│   │       ├── S32R45
+│   │       │   ├── Clock_Ip_BOARD_InitPeripherals_PBcfg.c
+│   │       │   ├── Clock_Ip_BOARD_InitPeripherals_PBcfg.h
+│   │       │   └── Clock_Ip_Cfg_Defines.h
+│   │       ├── Siul2_Port_Ip_Cfg.c
+│   │       ├── Siul2_Port_Ip_Cfg.h
+│   │       └── Siul2_Port_Ip_Defines.h
+│   └── Platform_TS_T40D11M30I2R0
+│       ├── anchors.xml
+│       ├── ant_generator.xml
+│       ├── autosar
+│       │   ├── Platform_s32g233a_bga525.epd
+│       │   ├── Platform_s32g234m_bga525.epd
+│       │   ├── Platform_s32g254a_bga525.epd
+│       │   ├── Platform_s32g274a_bga525.epd
+│       │   ├── Platform_s32g338m_bga525.epd
+│       │   ├── Platform_s32g339m_bga525.epd
+│       │   ├── Platform_s32g358a_bga525.epd
+│       │   ├── Platform_s32g359a_bga525.epd
+│       │   ├── Platform_s32g378a_bga525.epd
+│       │   ├── Platform_s32g379a_bga525.epd
+│       │   ├── Platform_s32g398a_bga525.epd
+│       │   ├── Platform_s32g399a_bga525.epd
+│       │   └── Platform_s32r45_bga780.epd
+│       ├── build_files
+│       │   ├── diab
+│       │   │   ├── linker_ram_c0.dld
+│       │   │   ├── linker_ram_c0_s32g3xx.dld
+│       │   │   ├── linker_ram_c1.dld
+│       │   │   ├── linker_ram_c1_s32g3xx.dld
+│       │   │   ├── linker_ram_c2.dld
+│       │   │   ├── linker_ram_c2_s32g3xx.dld
+│       │   │   ├── linker_ram_c3_s32g3xx.dld
+│       │   │   ├── linker_ram.dld
+│       │   │   └── linker_ram_s32g3xx.dld
+│       │   ├── gcc
+│       │   │   ├── linker_ram_c0.ld
+│       │   │   ├── linker_ram_c0_s32g3xx.ld
+│       │   │   ├── linker_ram_c1.ld
+│       │   │   ├── linker_ram_c1_s32g3xx.ld
+│       │   │   ├── linker_ram_c2.ld
+│       │   │   ├── linker_ram_c2_s32g3xx.ld
+│       │   │   ├── linker_ram_c3_s32g3xx.ld
+│       │   │   ├── linker_ram.ld
+│       │   │   └── linker_ram_s32g3xx.ld
+│       │   └── ghs
+│       │       ├── linker_ram_c0.ld
+│       │       ├── linker_ram_c0_s32g3xx.ld
+│       │       ├── linker_ram_c1.ld
+│       │       ├── linker_ram_c1_s32g3xx.ld
+│       │       ├── linker_ram_c2.ld
+│       │       ├── linker_ram_c2_s32g3xx.ld
+│       │       ├── linker_ram_c3_s32g3xx.ld
+│       │       ├── linker_ram.ld
+│       │       └── linker_ram_s32g3xx.ld
+│       ├── config
+│       │   └── Platform.xdm
+│       ├── doc
+│       │   ├── RTD_PLATFORM_IM.pdf
+│       │   └── RTD_PLATFORM_UM.pdf
+│       ├── generate
+│       │   ├── include
+│       │   │   ├── IntCtrl_Ip_CfgDefines.h
+│       │   │   ├── IntCtrl_Ip_Cfg.h
+│       │   │   ├── Platform_CfgDefines.h
+│       │   │   ├── Platform_Cfg.h
+│       │   │   ├── Platform_Ipw_Cfg.h
+│       │   │   ├── System_Ip_CfgDefines.h
+│       │   │   └── System_Ip_Cfg.h
+│       │   └── src
+│       │       ├── IntCtrl_Ip_Cfg.c
+│       │       ├── Platform_Cfg.c
+│       │       └── Platform_Ipw_Cfg.c
+│       ├── generate_swcd
+│       │   └── swcd
+│       │       └── Platform_Bswmd.arxml
+│       ├── include
+│       │   ├── IntCtrl_Ip.h
+│       │   ├── IntCtrl_Ip_TrustedFunctions.h
+│       │   ├── IntCtrl_Ip_TypesDef.h
+│       │   ├── Platform.h
+│       │   ├── Platform_Ipw.h
+│       │   ├── Platform_Ipw_TypesDef.h
+│       │   ├── Platform_TypesDef.h
+│       │   ├── System_Ip_DeviceRegisters.h
+│       │   └── System_Ip.h
+│       ├── META-INF
+│       │   ├── CRYPTOMANIFEST.MF
+│       │   ├── CRYPTOMANIFESTSIG.MF
+│       │   └── MANIFEST.MF
+│       ├── plugin.xml
+│       ├── src
+│       │   ├── IntCtrl_Ip.c
+│       │   ├── Platform.c
+│       │   ├── Platform_Ipw.c
+│       │   └── System_Ip.c
+│       └── startup
+│           ├── include
+│           │   ├── core_specific.h
+│           │   ├── nvic.h
+│           │   ├── sys_init.h
+│           │   └── system.h
+│           └── src
+│               ├── m7
+│               │   ├── diab
+│               │   │   ├── startup_cm7.s
+│               │   │   └── Vector_Table.s
+│               │   ├── exceptions.c
+│               │   ├── gcc
+│               │   │   ├── startup_cm7.s
+│               │   │   └── Vector_Table.s
+│               │   ├── ghs
+│               │   │   ├── startup_cm7.s
+│               │   │   └── Vector_Table.s
+│               │   └── startup.c
+│               ├── nvic.c
+│               ├── sys_init.c
+│               └── system.c
+├── out.log
+├── Project_Settings
+│   ├── Debugger
+│   │   ├── TEST_M7_0_Debug_RAM_S32Debug.launch
+│   │   └── TEST_M7_0_Release_RAM_S32Debug.launch
+│   ├── Linker_Files
+│   │   └── linker_ram.ld
+│   └── Startup_Code
+│       ├── exceptions.c
+│       ├── nvic.c
+│       ├── startup.c
+│       ├── startup_cm7.s
+│       ├── system.c
+│       └── Vector_Table.s
+├── RTD
+│   ├── include
+│   │   ├── Clock_Ip.h
+│   │   ├── Clock_Ip_Private.h
+│   │   ├── Clock_Ip_Specific.h
+│   │   ├── Clock_Ip_Types.h
+│   │   ├── OsIf_Cfg_TypesDef.h
+│   │   ├── OsIf_DeviceRegisters.h
+│   │   ├── OsIf.h
+│   │   ├── OsIf_Internal.h
+│   │   ├── OsIf_Timer_Custom.h
+│   │   ├── OsIf_Timer_System.h
+│   │   ├── OsIf_Timer_System_Internal_Systick.h
+│   │   ├── SchM_Mcu.h
+│   │   ├── SchM_Port.h
+│   │   ├── Siul2_Port_Ip.h
+│   │   └── Siul2_Port_Ip_Types.h
+│   └── src
+│       ├── Clock_Ip.c
+│       ├── Clock_Ip_Data.c
+│       ├── Clock_Ip_Divider.c
+│       ├── Clock_Ip_DividerTrigger.c
+│       ├── Clock_Ip_ExtOsc.c
+│       ├── Clock_Ip_FracDiv.c
+│       ├── Clock_Ip_Gate.c
+│       ├── Clock_Ip_IntOsc.c
+│       ├── Clock_Ip_Monitor.c
+│       ├── Clock_Ip_Pll.c
+│       ├── Clock_Ip_ProgFreqSwitch.c
+│       ├── Clock_Ip_Selector.c
+│       ├── Clock_Ip_Specific.c
+│       ├── OsIf_Timer.c
+│       ├── OsIf_Timer_System.c
+│       ├── SchM_Mcu.c
+│       ├── SchM_Port.c
+│       └── Siul2_Port_Ip.c
+├── src
+│   └── main.c
+├── src.bak
+└── Startup_Code.bak
+    ├── startup_ARMCM7.c
+    └── system_ARMCM7.c
+
+57 directories, 577 files

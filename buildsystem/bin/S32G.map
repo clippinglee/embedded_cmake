@@ -1,0 +1,448 @@
+Archive member included to satisfy reference by file (symbol)
+
+../bin/lib/libexample.a(startup_cm7.s.o)
+                              (Reset_Handler)
+../bin/lib/libexample.a(system.c.o)
+                              ../bin/lib/libexample.a(startup_cm7.s.o) (startup_go_to_user_mode)
+../bin/lib/libexample.a(Vector_Table.s.o)
+                              ../bin/lib/libexample.a(startup_cm7.s.o) (VTABLE)
+../bin/lib/libexample.a(exceptions.c.o)
+                              ../bin/lib/libexample.a(Vector_Table.s.o) (NMI_Handler)
+../bin/lib/libexample.a(nvic.c.o)
+                              ../bin/lib/libexample.a(system.c.o) (NVIC_SetPriorityGrouping)
+../bin/lib/libexample.a(startup.c.o)
+                              ../bin/lib/libexample.a(startup_cm7.s.o) (init_data_bss)
+
+Discarded input sections
+
+ .boot_header   0x00000000       0x28 ../bin/lib/libexample.a(startup_cm7.s.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+int_itcm         0x00000000         0x00000000
+int_dtcm         0x20000000         0x00010000
+int_sram_shareable 0x22c00000         0x00004000
+int_sram         0x34000000         0x00400000
+int_sram_stack_c0 0x34400000         0x00002000
+int_sram_stack_c1 0x34402000         0x00002000
+int_sram_stack_c2 0x34404000         0x00002000
+int_sram_no_cacheable 0x34500000         0x00100000
+ram_rsvd2        0x34600000         0x00000000
+LLCE_CAN_SHAREDMEMORY 0x43800000         0x0003c800
+LLCE_LIN_SHAREDMEMORY 0x4383c800         0x000000a0
+LLCE_BOOT_END    0x4383c8a0         0x00000050
+LLCE_MEAS_SHAREDMEMORY 0x4384ffdf         0x00000020
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD CMakeFiles/S32G.dir/example/src/main.c.o
+LOAD /home/ubuntu/workspace/gcc-9.2-arm32-eabi/arm-none-eabi/newlib/lib/libc.a
+LOAD /home/ubuntu/workspace/gcc-9.2-arm32-eabi/lib/gcc/arm-none-eabi/9.2.0/libgcc.a
+LOAD /home/ubuntu/workspace/gcc-9.2-arm32-eabi/arm-none-eabi/newlib/lib/libm.a
+LOAD ../bin/lib/libexample.a
+                0x00003000                HEAP_SIZE = DEFINED (__heap_size__)?__heap_size__:0x3000
+
+.sram           0x34000000      0x610
+                0x34000000                . = ALIGN (0x4)
+ *(.core_loop)
+ .core_loop     0x34000000        0xc ../bin/lib/libexample.a(startup_cm7.s.o)
+                0x34000000                _core_loop
+                0x3400000c                . = ALIGN (0x4)
+ *(.startup)
+ *fill*         0x3400000c        0x4 
+ .startup       0x34000010      0x1d0 ../bin/lib/libexample.a(startup_cm7.s.o)
+                0x34000010                Reset_Handler
+                0x34000010                _start
+                0x3400016a                MCAL_LTB_TRACE_OFF
+                0x3400016c                _end_of_eunit_test
+                0x340001e0                . = ALIGN (0x4)
+ *(.text.startup)
+                0x340001e0                . = ALIGN (0x4)
+ *(.text)
+ .text          0x340001e0        0x0 CMakeFiles/S32G.dir/example/src/main.c.o
+ .text          0x340001e0        0x0 ../bin/lib/libexample.a(startup_cm7.s.o)
+ .text          0x340001e0        0x0 ../bin/lib/libexample.a(system.c.o)
+ .text          0x340001e0        0x0 ../bin/lib/libexample.a(Vector_Table.s.o)
+ .text          0x340001e0        0x0 ../bin/lib/libexample.a(exceptions.c.o)
+ .text          0x340001e0        0x0 ../bin/lib/libexample.a(nvic.c.o)
+ .text          0x340001e0        0x0 ../bin/lib/libexample.a(startup.c.o)
+ *(.text*)
+ .text.startup.main
+                0x340001e0       0x10 CMakeFiles/S32G.dir/example/src/main.c.o
+                0x340001e0                main
+ .text.SystemWfiConfig.part.0
+                0x340001f0       0x50 ../bin/lib/libexample.a(system.c.o)
+ .text.startup_go_to_user_mode
+                0x34000240        0x4 ../bin/lib/libexample.a(system.c.o)
+                0x34000240                startup_go_to_user_mode
+ .text.default_interrupt_routine
+                0x34000244        0x4 ../bin/lib/libexample.a(system.c.o)
+                0x34000244                default_interrupt_routine
+ .text.Sys_GetCoreID
+                0x34000248        0xc ../bin/lib/libexample.a(system.c.o)
+                0x34000248                Sys_GetCoreID
+ .text.SystemInit
+                0x34000254      0x1e8 ../bin/lib/libexample.a(system.c.o)
+                0x34000254                SystemInit
+ .text.SystemWfiConfig
+                0x3400043c       0x20 ../bin/lib/libexample.a(system.c.o)
+                0x3400043c                SystemWfiConfig
+ .text.NMI_Handler
+                0x3400045c        0x4 ../bin/lib/libexample.a(exceptions.c.o)
+                0x3400045c                NMI_Handler
+ .text.HardFault_Handler
+                0x34000460        0x4 ../bin/lib/libexample.a(exceptions.c.o)
+                0x34000460                HardFault_Handler
+ .text.MemManage_Handler
+                0x34000464        0x4 ../bin/lib/libexample.a(exceptions.c.o)
+                0x34000464                MemManage_Handler
+ .text.BusFault_Handler
+                0x34000468        0x4 ../bin/lib/libexample.a(exceptions.c.o)
+                0x34000468                BusFault_Handler
+ .text.UsageFault_Handler
+                0x3400046c        0x4 ../bin/lib/libexample.a(exceptions.c.o)
+                0x3400046c                UsageFault_Handler
+ .text.SVC_Handler
+                0x34000470        0x4 ../bin/lib/libexample.a(exceptions.c.o)
+                0x34000470                SVC_Handler
+ .text.DebugMon_Handler
+                0x34000474        0x4 ../bin/lib/libexample.a(exceptions.c.o)
+                0x34000474                DebugMon_Handler
+ .text.PendSV_Handler
+                0x34000478        0x4 ../bin/lib/libexample.a(exceptions.c.o)
+                0x34000478                PendSV_Handler
+ .text.SysTick_Handler
+                0x3400047c        0x4 ../bin/lib/libexample.a(exceptions.c.o)
+                0x3400047c                SysTick_Handler
+ .text.undefined_handler
+                0x34000480        0x4 ../bin/lib/libexample.a(exceptions.c.o)
+                0x34000480                undefined_handler
+ .text.NVIC_SetPriorityGrouping
+                0x34000484       0x14 ../bin/lib/libexample.a(nvic.c.o)
+                0x34000484                NVIC_SetPriorityGrouping
+ .text.NVIC_EnableIRQ
+                0x34000498       0x18 ../bin/lib/libexample.a(nvic.c.o)
+                0x34000498                NVIC_EnableIRQ
+ .text.NVIC_DisableIRQ
+                0x340004b0       0x18 ../bin/lib/libexample.a(nvic.c.o)
+                0x340004b0                NVIC_DisableIRQ
+ .text.NVIC_SetPriority
+                0x340004c8       0x10 ../bin/lib/libexample.a(nvic.c.o)
+                0x340004c8                NVIC_SetPriority
+ .text.init_data_bss
+                0x340004d8       0x64 ../bin/lib/libexample.a(startup.c.o)
+                0x340004d8                init_data_bss
+                0x3400053c                . = ALIGN (0x4)
+ *(.mcal_text)
+                0x3400053c                . = ALIGN (0x4)
+ *(.init)
+                0x3400053c                . = ALIGN (0x4)
+ *(.fini)
+                0x3400053c                . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata*)
+ .rodata.CSWTCH.14
+                0x3400053c       0x1c ../bin/lib/libexample.a(system.c.o)
+ .rodata.rasr   0x34000558       0x2c ../bin/lib/libexample.a(system.c.o)
+ .rodata.rbar   0x34000584       0x2c ../bin/lib/libexample.a(system.c.o)
+                0x340005b0                . = ALIGN (0x4)
+ *(.mcal_const_cfg)
+                0x340005b0                . = ALIGN (0x4)
+ *(.mcal_const)
+                0x340005b0                . = ALIGN (0x4)
+                0x340005b0                __init_table = .
+ *(.init_table)
+ .init_table    0x340005b0       0x34 ../bin/lib/libexample.a(startup_cm7.s.o)
+                0x340005e4                . = ALIGN (0x4)
+                0x340005e4                __zero_table = .
+ *(.zero_table)
+ .zero_table    0x340005e4       0x1c ../bin/lib/libexample.a(startup_cm7.s.o)
+                0x34000600                . = ALIGN (0x4)
+ *(.acfls_code_rom)
+                0x34000600                . = ALIGN (0x4)
+ *(.aceep_code_rom)
+                0x34000600                . = ALIGN (0x4)
+ *(.acmcu_code_rom)
+                0x34000600                . = ALIGN (0x4)
+ *(.ramcode)
+                0x34000600                . = ALIGN (0x4)
+ *(.data)
+ .data          0x34000600        0x0 CMakeFiles/S32G.dir/example/src/main.c.o
+ .data          0x34000600        0x0 ../bin/lib/libexample.a(startup_cm7.s.o)
+ .data          0x34000600        0x0 ../bin/lib/libexample.a(system.c.o)
+ .data          0x34000600        0x0 ../bin/lib/libexample.a(Vector_Table.s.o)
+ .data          0x34000600        0x0 ../bin/lib/libexample.a(exceptions.c.o)
+ .data          0x34000600        0x0 ../bin/lib/libexample.a(nvic.c.o)
+ .data          0x34000600        0x0 ../bin/lib/libexample.a(startup.c.o)
+ *(.data*)
+                0x34000600                . = ALIGN (0x4)
+ *(.mcal_data)
+                0x34000600                . = ALIGN (0x10)
+                0x34000600                __sram_bss_start = .
+ *(.bss)
+ .bss           0x34000600        0x0 CMakeFiles/S32G.dir/example/src/main.c.o
+ .bss           0x34000600        0x0 ../bin/lib/libexample.a(startup_cm7.s.o)
+ .bss           0x34000600        0x0 ../bin/lib/libexample.a(system.c.o)
+ .bss           0x34000600        0x0 ../bin/lib/libexample.a(Vector_Table.s.o)
+ .bss           0x34000600        0x0 ../bin/lib/libexample.a(exceptions.c.o)
+ .bss           0x34000600        0x0 ../bin/lib/libexample.a(nvic.c.o)
+ .bss           0x34000600        0x0 ../bin/lib/libexample.a(startup.c.o)
+ *(.bss*)
+ .bss.exit_code
+                0x34000600        0x4 CMakeFiles/S32G.dir/example/src/main.c.o
+                0x34000600                exit_code
+ .bss.RESET_CATCH_CORE
+                0x34000604        0x4 ../bin/lib/libexample.a(system.c.o)
+                0x34000604                RESET_CATCH_CORE
+                0x34000610                . = ALIGN (0x10)
+ *fill*         0x34000608        0x8 
+ *(.mcal_bss)
+                0x34000610                . = ALIGN (0x4)
+                0x34000610                __sram_bss_end = .
+                0x34000610                . = ALIGN (0x4)
+                0x34000610                __sram_shareable_rom = .
+
+.non_cacheable  0x34500000    0x40000
+                0x34500000                . = ALIGN (0x4)
+ *(.int_results)
+                0x34500100                . = (. + 0x100)
+ *fill*         0x34500000      0x100 
+                0x34501000                . = ALIGN (0x1000)
+ *fill*         0x34500100      0xf00 
+                0x34501000                __interrupts_ram_start = .
+ *(.intc_vector)
+ .intc_vector   0x34501000      0x408 ../bin/lib/libexample.a(Vector_Table.s.o)
+                0x34501000                VTABLE
+                0x34501408                . = ALIGN (0x4)
+                0x34501408                __interrupts_ram_end = .
+                0x34501410                . = ALIGN (0x10)
+ *fill*         0x34501408        0x8 
+                0x34501410                __non_cacheable_bss_start = .
+ *(.mcal_bss_no_cacheable)
+                0x34501410                . = ALIGN (0x4)
+                0x34501410                __non_cacheable_bss_end = .
+                0x34501410                . = ALIGN (0x4)
+ *(.mcal_data_no_cacheable)
+                0x34501410                . = ALIGN (0x4)
+ *(.mcal_const_no_cacheable)
+                0x34501410                HSE_LOOP_ADDR = .
+                0x34501410        0x4 LONG 0x0
+                0x34540000                . = ALIGN (0x40000)
+ *fill*         0x34501414    0x3ebec 
+ *(.pfe_bmu_mem)
+                0x34540000                . = ALIGN (0x4)
+ *(.pfe_bd_mem)
+                0x34540000                . = ALIGN (0x4)
+ *(.pfe_buf_mem)
+
+.glue_7         0x34540000        0x0
+ .glue_7        0x34540000        0x0 linker stubs
+
+.glue_7t        0x34540000        0x0
+ .glue_7t       0x34540000        0x0 linker stubs
+
+.vfp11_veneer   0x34540000        0x0
+ .vfp11_veneer  0x34540000        0x0 linker stubs
+
+.v4_bx          0x34540000        0x0
+ .v4_bx         0x34540000        0x0 linker stubs
+
+.iplt           0x34540000        0x0
+ .iplt          0x34540000        0x0 CMakeFiles/S32G.dir/example/src/main.c.o
+
+.igot.plt       0x34540000        0x0
+ .igot.plt      0x34540000        0x0 CMakeFiles/S32G.dir/example/src/main.c.o
+
+.rel.dyn        0x34540000        0x0
+ .rel.iplt      0x34540000        0x0 CMakeFiles/S32G.dir/example/src/main.c.o
+
+.heap           0x34540000     0x3000
+                0x00000000                . = (. + ALIGN (0x4))
+                0x34540000                _end = .
+                0x34540000                end = .
+                0x34540000                _heap_start = .
+                0x00003000                . = (. + HEAP_SIZE)
+ *fill*         0x34540000     0x3000 
+                0x34543000                _heap_end = .
+
+.llce_boot_end  0x4383c8a0        0x0
+                0x4383c8a0                . = ALIGN (0x4)
+ *(.llce_boot_end)
+
+.can_43_llce_sharedmemory
+                0x43800000        0x0
+                0x43800000                . = ALIGN (0x4)
+ *(.can_43_llce_sharedmemory)
+
+.lin_43_llce_sharedmemory
+                0x4383c800        0x0
+                0x4383c800                . = ALIGN (0x4)
+ *(.lin_43_llce_sharedmemory)
+
+.llce_meas_sharedmemory
+                0x4384ffdf        0x1
+                0x4384ffe0                . = ALIGN (0x4)
+ *fill*         0x4384ffdf        0x1 
+ *(.llce_meas_sharedmemory)
+
+.shareable_ram_bss
+                0x22c00000        0x0
+                0x22c00000                . = ALIGN (0x10)
+                0x22c00000                __shareable_bss_start = .
+ *(.mcal_shared_bss)
+                0x22c00000                . = ALIGN (0x4)
+                0x22c00000                __shareable_bss_end = .
+
+.shareable_ram_data
+                0x22c00000        0x0 load address 0x34000610
+                0x22c00000                . = ALIGN (0x10)
+                0x22c00000                __shareable_data_start = .
+ *(.mcal_shared_data)
+                0x22c00000                . = ALIGN (0x4)
+                0x22c00000                __shareable_data_end = .
+                0x34000610                __sram_shareable_rom_end = (__sram_shareable_rom + (__shareable_data_end - __shareable_data_start))
+                0x34400000                __Stack_end_c0 = ORIGIN (int_sram_stack_c0)
+                0x34402000                __Stack_start_c0 = (ORIGIN (int_sram_stack_c0) + LENGTH (int_sram_stack_c0))
+                0x34402000                __Stack_end_c1 = ORIGIN (int_sram_stack_c1)
+                0x34404000                __Stack_start_c1 = (ORIGIN (int_sram_stack_c1) + LENGTH (int_sram_stack_c1))
+                0x34404000                __Stack_end_c2 = ORIGIN (int_sram_stack_c2)
+                0x34406000                __Stack_start_c2 = (ORIGIN (int_sram_stack_c2) + LENGTH (int_sram_stack_c2))
+                0x00000000                __Stack_end_c3 = 0x0
+                0x00000000                __Stack_start_c3 = 0x0
+                0x34000000                __INT_SRAM_START = ORIGIN (int_sram)
+                0x34600000                __INT_SRAM_END = ORIGIN (ram_rsvd2)
+                0x00000000                __INT_ITCM_START = ORIGIN (int_itcm)
+                0x00000000                __INT_ITCM_END = (ORIGIN (int_itcm) + LENGTH (int_itcm))
+                0x20000000                __INT_DTCM_START = ORIGIN (int_dtcm)
+                0x20010000                __INT_DTCM_END = (ORIGIN (int_dtcm) + LENGTH (int_dtcm))
+                0x22c00000                __RAM_SHAREABLE_START = ORIGIN (int_sram_shareable)
+                0x22c03fff                __RAM_SHAREABLE_END = ((ORIGIN (int_sram_shareable) + LENGTH (int_sram_shareable)) - 0x1)
+                0x34000610                __ROM_SHAREABLE_START = __sram_shareable_rom
+                0x34000610                __ROM_SHAREABLE_END = __sram_shareable_rom_end
+                0x34500000                __RAM_NO_CACHEABLE_START = ORIGIN (int_sram_no_cacheable)
+                0x345fffff                __RAM_NO_CACHEABLE_END = ((ORIGIN (int_sram_no_cacheable) + LENGTH (int_sram_no_cacheable)) - 0x1)
+                0x00000000                __ROM_NO_CACHEABLE_START = 0x0
+                0x00000000                __ROM_NO_CACHEABLE_END = 0x0
+                0x34000000                __RAM_CACHEABLE_START = ORIGIN (int_sram)
+                0x343fffff                __RAM_CACHEABLE_END = ((ORIGIN (int_sram) + LENGTH (int_sram)) - 0x1)
+                0x00000000                __ROM_CACHEABLE_START = 0x0
+                0x00000000                __ROM_CACHEABLE_END = 0x0
+                0x34000600                __BSS_SRAM_START = __sram_bss_start
+                0x34000610                __BSS_SRAM_END = __sram_bss_end
+                0x00000010                __BSS_SRAM_SIZE = (__sram_bss_end - __sram_bss_start)
+                0x34501410                __BSS_SRAM_NC_START = __non_cacheable_bss_start
+                0x00000000                __BSS_SRAM_NC_SIZE = (__non_cacheable_bss_end - __non_cacheable_bss_start)
+                0x34501410                __BSS_SRAM_NC_END = __non_cacheable_bss_end
+                0x22c00000                __BSS_SRAM_SH_START = __shareable_bss_start
+                0x00000000                __BSS_SRAM_SH_SIZE = (__shareable_bss_end - __shareable_bss_start)
+                0x22c00000                __BSS_SRAM_SH_END = __shareable_bss_end
+                0x34501000                __RAM_INTERRUPT_START = __interrupts_ram_start
+                0x00000000                __ROM_INTERRUPT_START = 0x0
+                0x00000000                __ROM_INTERRUPT_END = 0x0
+                0x340005b0                __INIT_TABLE = __init_table
+                0x340005e4                __ZERO_TABLE = __zero_table
+                0x00000000                __RAM_INIT = 0x0
+                0x00000000                __ITCM_INIT = 0x0
+                0x00000001                __DTCM_INIT = 0x1
+
+/DISCARD/
+ *(.boot_header)
+OUTPUT(../bin/S32G.elf elf32-littlearm)
+
+.debug_info     0x00000000     0x1f0f
+ .debug_info    0x00000000       0xb5 CMakeFiles/S32G.dir/example/src/main.c.o
+ .debug_info    0x000000b5       0x22 ../bin/lib/libexample.a(startup_cm7.s.o)
+ .debug_info    0x000000d7     0x1331 ../bin/lib/libexample.a(system.c.o)
+ .debug_info    0x00001408      0x13c ../bin/lib/libexample.a(exceptions.c.o)
+ .debug_info    0x00001544      0x76d ../bin/lib/libexample.a(nvic.c.o)
+ .debug_info    0x00001cb1      0x25e ../bin/lib/libexample.a(startup.c.o)
+
+.debug_abbrev   0x00000000      0x4fb
+ .debug_abbrev  0x00000000       0x60 CMakeFiles/S32G.dir/example/src/main.c.o
+ .debug_abbrev  0x00000060       0x12 ../bin/lib/libexample.a(startup_cm7.s.o)
+ .debug_abbrev  0x00000072      0x265 ../bin/lib/libexample.a(system.c.o)
+ .debug_abbrev  0x000002d7       0x44 ../bin/lib/libexample.a(exceptions.c.o)
+ .debug_abbrev  0x0000031b       0xff ../bin/lib/libexample.a(nvic.c.o)
+ .debug_abbrev  0x0000041a       0xe1 ../bin/lib/libexample.a(startup.c.o)
+
+.debug_aranges  0x00000000      0x150
+ .debug_aranges
+                0x00000000       0x20 CMakeFiles/S32G.dir/example/src/main.c.o
+ .debug_aranges
+                0x00000020       0x28 ../bin/lib/libexample.a(startup_cm7.s.o)
+ .debug_aranges
+                0x00000048       0x48 ../bin/lib/libexample.a(system.c.o)
+ .debug_aranges
+                0x00000090       0x68 ../bin/lib/libexample.a(exceptions.c.o)
+ .debug_aranges
+                0x000000f8       0x38 ../bin/lib/libexample.a(nvic.c.o)
+ .debug_aranges
+                0x00000130       0x20 ../bin/lib/libexample.a(startup.c.o)
+
+.debug_ranges   0x00000000      0x160
+ .debug_ranges  0x00000000       0x10 CMakeFiles/S32G.dir/example/src/main.c.o
+ .debug_ranges  0x00000010       0x20 ../bin/lib/libexample.a(startup_cm7.s.o)
+ .debug_ranges  0x00000030       0xa0 ../bin/lib/libexample.a(system.c.o)
+ .debug_ranges  0x000000d0       0x58 ../bin/lib/libexample.a(exceptions.c.o)
+ .debug_ranges  0x00000128       0x28 ../bin/lib/libexample.a(nvic.c.o)
+ .debug_ranges  0x00000150       0x10 ../bin/lib/libexample.a(startup.c.o)
+
+.debug_line     0x00000000      0xfc7
+ .debug_line    0x00000000       0x8e CMakeFiles/S32G.dir/example/src/main.c.o
+ .debug_line    0x0000008e      0x171 ../bin/lib/libexample.a(startup_cm7.s.o)
+ .debug_line    0x000001ff      0x651 ../bin/lib/libexample.a(system.c.o)
+ .debug_line    0x00000850      0x20b ../bin/lib/libexample.a(exceptions.c.o)
+ .debug_line    0x00000a5b      0x2c4 ../bin/lib/libexample.a(nvic.c.o)
+ .debug_line    0x00000d1f      0x2a8 ../bin/lib/libexample.a(startup.c.o)
+
+.debug_str      0x00000000      0xf46
+ .debug_str     0x00000000      0x23c CMakeFiles/S32G.dir/example/src/main.c.o
+                                0x277 (size before relaxing)
+ .debug_str     0x0000023c       0xb2 ../bin/lib/libexample.a(startup_cm7.s.o)
+ .debug_str     0x000002ee      0x95a ../bin/lib/libexample.a(system.c.o)
+                                0xba9 (size before relaxing)
+ .debug_str     0x00000c48      0x107 ../bin/lib/libexample.a(exceptions.c.o)
+                                0x332 (size before relaxing)
+ .debug_str     0x00000d4f       0xdd ../bin/lib/libexample.a(nvic.c.o)
+                                0x51d (size before relaxing)
+ .debug_str     0x00000e2c      0x11a ../bin/lib/libexample.a(startup.c.o)
+                                0x378 (size before relaxing)
+
+.comment        0x00000000       0x80
+ .comment       0x00000000       0x80 CMakeFiles/S32G.dir/example/src/main.c.o
+                                 0x81 (size before relaxing)
+ .comment       0x00000080       0x81 ../bin/lib/libexample.a(system.c.o)
+ .comment       0x00000080       0x81 ../bin/lib/libexample.a(exceptions.c.o)
+ .comment       0x00000080       0x81 ../bin/lib/libexample.a(nvic.c.o)
+ .comment       0x00000080       0x81 ../bin/lib/libexample.a(startup.c.o)
+
+.ARM.attributes
+                0x00000000       0x2e
+ .ARM.attributes
+                0x00000000       0x30 CMakeFiles/S32G.dir/example/src/main.c.o
+ .ARM.attributes
+                0x00000030       0x1f ../bin/lib/libexample.a(startup_cm7.s.o)
+ .ARM.attributes
+                0x0000004f       0x30 ../bin/lib/libexample.a(system.c.o)
+ .ARM.attributes
+                0x0000007f       0x20 ../bin/lib/libexample.a(Vector_Table.s.o)
+ .ARM.attributes
+                0x0000009f       0x30 ../bin/lib/libexample.a(exceptions.c.o)
+ .ARM.attributes
+                0x000000cf       0x30 ../bin/lib/libexample.a(nvic.c.o)
+ .ARM.attributes
+                0x000000ff       0x30 ../bin/lib/libexample.a(startup.c.o)
+
+.debug_frame    0x00000000      0x1e8
+ .debug_frame   0x00000000       0x20 CMakeFiles/S32G.dir/example/src/main.c.o
+ .debug_frame   0x00000020       0x9c ../bin/lib/libexample.a(system.c.o)
+ .debug_frame   0x000000bc       0xb0 ../bin/lib/libexample.a(exceptions.c.o)
+ .debug_frame   0x0000016c       0x50 ../bin/lib/libexample.a(nvic.c.o)
+ .debug_frame   0x000001bc       0x2c ../bin/lib/libexample.a(startup.c.o)
+
+.debug_loc      0x00000000      0x3af
+ .debug_loc     0x00000000      0x1a1 ../bin/lib/libexample.a(system.c.o)
+ .debug_loc     0x000001a1       0xb9 ../bin/lib/libexample.a(nvic.c.o)
+ .debug_loc     0x0000025a      0x155 ../bin/lib/libexample.a(startup.c.o)
